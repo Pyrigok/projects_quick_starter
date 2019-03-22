@@ -20,11 +20,14 @@ Clone repo
 Set up project settings with docker
     $ sudo docker-compose build
     $ sudo docker-compose up
+    
+    Open new terminal
+    $ sudo docker-compose run django python3 manage.py migrate
+    $ sudo docker-compose run django python3 manage.py runserver
 
-    there should now be two servers running:
+    Run in browser next addresses
         - http://127.0.0.1:8000 is the Django app
         - http://127.0.0.1:3000 is the React app
-
 
 Close down Docker container
     $ docker-compose down
