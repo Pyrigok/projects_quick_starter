@@ -1,15 +1,15 @@
-version: '1'
+version: '2.2'
 
 services:
   db:
     image: postgres
     ports:
-      - "5432:5432"
+      - "5433:5432"
   django:
     build: ./server
-    command: ["python", "manage.py", "runserver", "127.0.0.1:8000"]
+    command: ["python3", "manage.py", "runserver", "127.0.0.1:8000"]
     volumes:
-      - ./api:/app/server
+      - ./server:/app/server
     ports:
       - "8000:8000"
     depends_on:
@@ -18,7 +18,7 @@ services:
     build: ./client
     command: ["npm", "start"]
     volumes:
-      - ./frontend:/app/client
+      - ./client:/app/client
       - node-modules:/app/client/node_modules
     ports:
       - "3000:3000"
