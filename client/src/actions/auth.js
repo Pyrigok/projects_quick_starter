@@ -1,4 +1,6 @@
 const current_user_endpoint = 'http://localhost:8000/auth/user/';
+const login_endpoint = 'http://127.0.0.1:8000/auth/login/';
+const register_endpoint = "http://127.0.0.1:8000/auth/register/";
 
 export const loadUser = () => {
     return (dispatch, getState) => {
@@ -41,7 +43,7 @@ export const login = (username, password) => {
         let headers = {"Content-Type": "application/json"};
         let body = JSON.stringify({username, password});
 
-        return fetch("http://127.0.0.1:8000/auth/login/", {headers, body, method: "POST"})
+        return fetch(login_endpoint, {headers, body, method: "POST"})
             .then(res => {
                 if (res.status < 500) {
                     return res.json().then(data => {
@@ -72,7 +74,7 @@ export const register = (username, email, password) => {
         let headers = {"Content-Type": "application/json"};
         let body = JSON.stringify({username, email, password});
 
-        return fetch("http://127.0.0.1:8000/auth/register/", {headers, body, method: "POST"})
+        return fetch(register_endpoint, {headers, body, method: "POST"})
             .then(res => {
                 if (res.status < 500) {
                     return res.json().then(data => {
