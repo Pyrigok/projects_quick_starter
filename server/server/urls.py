@@ -6,7 +6,7 @@ from rest_framework_jwt.views import obtain_jwt_token
 
 
 urlpatterns = [
-    path('', generic.RedirectView.as_view(url='/api/', permanent=False)),
+    path('', generic.RedirectView.as_view(url='/auth/register/', permanent=False)),
     path('auth/', include('auth_app.urls')),
     path('api/auth/', include('knox.urls')),
     path('token-obtain/', obtain_jwt_token),

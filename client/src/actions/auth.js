@@ -41,7 +41,7 @@ export const login = (username, password) => {
         let headers = {"Content-Type": "application/json"};
         let body = JSON.stringify({username, password});
 
-        return fetch("http://127.0.0.1:8000/token-obtain/", {headers, body, method: "POST"})
+        return fetch("http://127.0.0.1:8000/auth/login/", {headers, body, method: "POST"})
             .then(res => {
                 if (res.status < 500) {
                     return res.json().then(data => {
