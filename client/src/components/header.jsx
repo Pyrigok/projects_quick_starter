@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from "react-router-dom";
 
-const current_user_endpoint = 'http://localhost:8000/auth/current-user/';
 
 class Header extends Component {
     constructor(props) {

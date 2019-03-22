@@ -46,22 +46,6 @@ class RootContainerComponent extends Component {
             </Router>
         );
     } 
-
-
-    // render() {
-    //     return (
-    //         <Router>
-    //             <div>
-    //                 <Header/>
-
-    //                 <Route exact path="/" component={Home}/>
-    //                 <Route path="/login" component={Login}/>
-    //                 <Route path="/register" component={Register}/>
-
-    //             </div>
-    //         </Router>
-    //     );
-    // }
 }
 
 const mapStateToProps = state => {
