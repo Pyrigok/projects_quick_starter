@@ -5,6 +5,10 @@ import Header from './components/header';
 import Home from "./components/home";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import ResetPassword from './components/ResetPassword/ResetPassword';
+import ResetPasswordConfirm from './components/ResetPassword/Reset-password-confirm';
+import ResetPasswordComplete from './components/ResetPassword/Reset-password-complete';
+import ResetPasswordDone from './components/ResetPassword/Reset-password-done';
 
 import startApp from './reducers';
 import {auth} from './actions';
@@ -37,6 +41,12 @@ class RootContainerComponent extends Component {
             <Router>
             <div>
                 <Header />
+                <Route path="/reset-password" component={ResetPassword} />
+                <Route path="/reset/confirm/:uid/:token/:email" component={ResetPasswordConfirm}/>
+                <Route path="/reset-password-complete" component={ResetPasswordComplete}/>
+
+                <Route path="/reset-password-done" component={ResetPasswordDone}/>
+
                 <Switch>
                     <PrivateRoute exact path="/" component={Home} />
                     <Route path="/register" component={Register} />

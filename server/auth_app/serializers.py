@@ -49,3 +49,9 @@ class UserSerializerWithToken(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ('username', 'password')
+
+
+class ResetPasswordSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = ('email',)
+        model = User
